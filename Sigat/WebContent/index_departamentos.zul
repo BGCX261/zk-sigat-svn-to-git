@@ -1,0 +1,16 @@
+<?page title="Sigat" contentType="text/html;charset=UTF-8"?>
+<?component name="Departamentos" macroURI="departamentos.zul"?>
+<?component name="Menu" macroURI="menu.zul"?>
+<?component name="Header" macroURI="header.zul"?>
+<zk>
+	<window title="" height="100%" width="100%">
+
+		<borderlayout>
+			<north><Header/></north>
+			<west><Menu/></west>
+			<center ><Departamentos/></center>
+			
+		</borderlayout>
+
+	</window>
+</zk>

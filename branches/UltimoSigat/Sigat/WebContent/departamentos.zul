@@ -1,0 +1,89 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<!-- ?component name="NuevoDeptoDialog" macroURI="nuevoDepto.zul"?>  -->
+<zk>
+	<window id="depWin" title="Departamentos" width="70%" mode="overlapped" position="center, center" border="normal"
+		closable="true" minimizable="true" maximizable="true" sizable="true" 
+			apply="zk_controllers.DepartamentoCRUDController" >
+
+
+		<listbox id="depto_listbox" rows="10"
+			model="@{depWin$composer.allDepartamentos, 
+	load-after='add.onClick, update.onClick, delete.onClick'}"
+			selectedItem="@{depWin$composer.current}">
+			<listhead>
+				<listheader label="Nombre" />
+				<listheader label="Color" />
+				<listheader label="Tarifa" />
+				<listheader label="Plazas" />
+				<listheader label="Comodidades" />
+			</listhead>
+
+			<listitem self="@{each=depto}" value="@{depto}">
+				<listcell label="@{depto.nombre}" />
+				<listcell label="@{depto.color}" />
+				<listcell label="@{depto.tarifa}" />
+				<listcell label="@{depto.plazas}" />
+				<listcell label="@{depto.comodidades}" />
+			</listitem>
+		</listbox>
+
+		
+		
+		<grid>
+			<rows>
+				<row>
+					Nombre:
+					<textbox id="nombre" cols="25"
+						value="@{depWin$composer.current.nombre }" />
+				</row>
+				<!--  row>
+					Color:
+					<textbox id="color" cols="25"
+						value="@{depWin$composer.current.color }" />
+				</row> -->
+				<row>
+					Color:
+					<combobox id="color" value="@{depWin$composer.current.color }">
+						<attribute name="onSelect">
+							switch(self.getSelectedIndex()) {
+							case 0: self.style = "color:#D96666;font-weight: bold;"; break;
+							case 1: self.style = "color:#668CD9;font-weight: bold;"; break;
+							case 2: self.style = "color:#4CB052;font-weight: bold;"; break;
+							case 3: self.style = "color:#BFBF4D;font-weight: bold;"; break;
+							case 4: self.style = "color:#B373B3;font-weight: bold;"; break;
+							}
+						</attribute>
+						<comboitem sclass="red" label="Rojo" value="#A32929,#D96666"/>
+						<comboitem sclass="blue" label="Azul" value="#3467CE,#668CD9"/>
+						<comboitem sclass="green" label="Verde" value="#0D7813,#4CB052"/>
+						<comboitem sclass="khaki" label="Khaki" value="#88880E,#BFBF4D"/>
+						<comboitem sclass="purple" label="Violeta" value="#7A367A,#B373B3"/>  
+				</combobox>
+
+				</row>
+				<row>
+					Tarifa:
+					<textbox id="tarifa" cols="25"
+						value="@{depWin$composer.current.tarifa }" />
+				</row>
+				<row>
+					Plazas:
+					<textbox id="plazas" cols="25"
+						value="@{depWin$composer.current.plazas }" />
+				</row>
+				<row>
+					Comodidades:
+					<textbox id="comodidades" cols="25"
+						value="@{depWin$composer.current.comodidades }" />
+				</row>
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<div>
+				<button id="add" label="Agregar" />
+				<button id="update" label="Modificar" />
+				<button id="delete" label="Borrar" />
+			</div>
+		</hbox>
+	</window>
+</zk>

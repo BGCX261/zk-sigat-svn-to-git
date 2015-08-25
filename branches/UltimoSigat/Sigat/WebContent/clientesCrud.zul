@@ -1,0 +1,52 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+
+<window id="cliWin" title="" width="100%" height="100%" border="normal"
+	apply="zk_controllers.ClientesCRUDController">
+	<listbox id="cliLb" multiple="true" rows="5"
+		model="@{cliWin$composer.allClientes, 
+	load-after='add.onClick, update.onClick, delete.onClick'}"
+		selectedItem="@{cliWin$composer.current}">
+		<listhead>
+			<listheader label="Razon Social" />
+			<listheader label="C.U.I.T." width="160px" />
+			<listheader label="Telefono" width="160px" />
+		</listhead>
+		<listitem self="@{each='cliente'}" value="@{cliente}">
+			<!-- el label se escribe con el nombre de la variable en el entity
+				y lo renderiza Automagicamente -->
+			<listcell label="@{cliente.razonSocial}" />
+			<listcell label="@{cliente.ciut}" />
+			<listcell label="@{cliente.telefono}" />
+		</listitem>
+	</listbox>
+
+
+	<caption label="Clientes" />
+	<grid>
+		<rows>
+			<row>
+				Razon Social:
+				<textbox id="razonSocial" cols="25"
+					value="@{cliWin$composer.current.razonSocial }" />
+			</row>
+			<row>
+				C.U.I.T.:
+				<textbox id="ciut" cols="25"
+					value="@{cliWin$composer.current.ciut }" />
+			</row>
+			<row>
+				Telefono:
+				<textbox id="telefono" cols="25"
+					value="@{cliWin$composer.current.telefono }" />
+			</row>
+		</rows>
+	</grid>
+	<hbox pack="center" width="100%">
+		<div>
+			<button id="add" label="Agregar" />
+			<button id="update" label="Actualizar" />
+			<button id="delete" label="Eliminar" />
+
+		</div>
+	</hbox>
+</window>

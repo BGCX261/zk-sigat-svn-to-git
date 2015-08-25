@@ -1,0 +1,57 @@
+<?page title="Nuevo Pasajero" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="winPasaj" title="Nuevo Pasajero" border="normal" mode="popup" >
+
+		<grid>
+			<columns>
+				<column width="250px" />
+				<column />
+			</columns>
+			<rows>
+				<row spans="2">
+					<div align="center">
+						<label style="font-weight:bold;"
+							value="Información Nuevo Pasajero" />
+					</div>
+				</row>
+				<row>
+					Nombre:
+					<textbox id="nombre" />
+				</row>
+				<row>
+					Color:
+					<combobox>
+						<comboitem label="Rojo" value="#A32929,#D96666" />
+						<comboitem label="Azul" />
+						<comboitem label="Amarillo" />
+						<comboitem label="Violeta" />
+						<comboitem label="Cremita" />
+					</combobox>
+
+				</row>
+
+				<row>
+					Tarifa:
+					<textbox id="tarifa" />
+				</row>
+				<row>
+					Plazas:
+					<textbox id="plaza" />
+				</row>
+				<row>
+					Comodidades:
+					<textbox id="comodidades" cols="50" height="200px" width="250px" />
+				</row>
+
+			</rows>
+
+		</grid>
+		<groupbox>
+			<div align="right">
+				<button id="btnGuardar" label="Guardar" width="80px"  />
+				<button id="btnSalir" label="Salir" width="80px" />
+			</div>
+		</groupbox>
+
+	</window>
+</zk>

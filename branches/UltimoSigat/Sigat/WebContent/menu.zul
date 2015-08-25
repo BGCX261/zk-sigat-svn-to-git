@@ -1,0 +1,29 @@
+<?page title="Menu de Funciones" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Menu" border="normal" height="100%" width="100%">
+
+		<grid>
+			<rows>
+				<row>
+					<button id="btn_calendar" width="130px"
+						height="24px" label="CALENDARIO" href="/index.zul" />
+				</row>
+				<row>
+					<button id="btn_clientes" width="130px"
+						height="24px" label="CLIENTES" href="/index_clientes.zul" />
+				</row>
+				<row>
+					<button id="btn_pasajeros" width="130px"
+						height="24px" label="PASAJEROS" href="/index_pasajeros.zul" />
+				</row>
+				<row>
+					<button id="btn_conf" width="130px" height="24px"
+						label="DEPATAMENTOS" href="/index_departamentos.zul" />
+				</row>
+			</rows>
+		</grid>
+
+
+	</window>
+
+</zk>

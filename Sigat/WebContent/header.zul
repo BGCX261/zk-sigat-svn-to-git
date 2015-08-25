@@ -1,0 +1,10 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="" border="line" height="100%" width="100%">
+
+<!-- 
+<div align="left"><image align="center" src="img/logo2.png" width="400px" height="150px"/></div>
+-->
+<div align="left"><image align="center" src="img/sigat.gif" /></div>
+</window>
+</zk>

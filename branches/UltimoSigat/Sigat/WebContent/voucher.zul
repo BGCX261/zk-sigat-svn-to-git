@@ -1,0 +1,46 @@
+<?page title="Voucher Prueba" contentType="text/html;charset=UTF-8" ?>
+<zk>
+	<div apply="zk_controllers.ControllerVoucherView">
+		<groupbox width="980px"><!-- Groupbox Principal -->
+			<grid>
+				<auxhead>
+					<auxheader colspan="1" label="Voucher" />
+				</auxhead>
+				<columns></columns>
+			</grid>
+
+
+			<groupbox><!-- Groupbox de Datos -->
+				<caption label="Buscar" />
+				<grid>
+					<columns>
+						<column label="" align="right" />
+						<column label="" align="right" />
+						<column label="" align="right" />
+						<column label="" align="right" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Número de Reserva :" />
+							<combobox id="cmbTipAct" width="180px"
+								tooltiptext="Seleccione el Tipo de Actividad">
+								<comboitem label="" />
+								<comboitem label="" />
+								<comboitem label="" />
+							</combobox>
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+
+			<groupbox>
+				<div align="right">
+					<button id="btnImprimir" label="Imprimir"
+						width="80px" />  
+					<button id="btnSalir" label="Salir"
+						width="80px"  /> 
+				</div>
+			</groupbox>
+		</groupbox>
+	</div>
+</zk>

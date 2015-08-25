@@ -1,0 +1,42 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./comoWin"?>
+<zk>
+	<window id="comoWin" title="" width="100%" height="100%"
+		closable="true" maximizable="true" sizable="true"
+		border="normal" apply="zk_controllers.ComodidadesCrudController">
+		<listbox multiple="true" rows="5"
+			model="@{comoWin$composer.allComodidades, 
+			load-after='add.onClick, update.onClick, delete.onClick'}"
+			selectedItem="@{comoWin$composer.current}">
+			<listhead sizable="true">
+				<listheader label="ID" />
+				<listheader label="Comodidad" />
+				
+			</listhead>
+			<listitem self="@{each='comodidades'}" value="@{comodidades}">
+				<listcell label="@{comodidades.idcomodidades}" />
+				<listcell label="@{comodidades.nombre}" />				
+			</listitem>
+		</listbox>
+
+
+		<caption label="Comodidades" />
+		<grid>
+			<rows>
+				<row>
+					Comodidad:
+					<textbox id="nombre" cols="25"
+						value="@{comoWin$composer.current.nombre }" />
+				</row>				
+			</rows>
+		</grid>
+		<hbox pack="center" width="100%">
+			<div>
+				<button id="add" label="Agregar" />
+				<button id="update" label="Actualizar" />
+				<button id="delete" label="Eliminar" />
+
+			</div>
+		</hbox>
+	</window>
+</zk>

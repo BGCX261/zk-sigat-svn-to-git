@@ -1,0 +1,42 @@
+<?page title="Calendario de Reservas" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/calendar.css?v=${desktop.webApp.build}"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<?component name="CreateDialog" macroURI="createEntry.zul"?>
+<?component name="UpdateDialog" macroURI="updateEntry.zul"?>
+<zk>
+	<window id="win" apply="zk_controllers.ReservaController"
+		height="100%" width="100%" title="Sigat">
+		<CreateDialog id="creationDialog" />
+		<UpdateDialog id="updateDialog" />
+
+		<borderlayout>
+			<center>
+				<calendars id="cal" firstDayOfWeek="Sunday"
+					timeZone="California=PDT-8"
+					model="@{win$composer.getCalendarModel}" mold="month">
+					<toolbar sclass="calendar-toolbar">
+						<button id="btnPPage" label="Anterior"  class="refresh" />
+						<button mold="os" label="Hoy" forward="onToday" />
+						<button id="btnNPage" label="Siguiente"  class="refresh" />
+
+						<textbox id="irAFechaText" cols="15"/>
+						<button id="btnIrAFecha" label="Ir a fecha" />
+						
+						<!--<separator orient="vertical" width="10px" />-->
+						<div align="left">
+							<label id="label" />
+						</div>
+
+
+					</toolbar>
+				</calendars>
+			</center>
+			<south title="Grafico de uso de departamentos" maxsize="100" size="300px"
+				collapsible="true" open="false">
+				<chart id="piechart" title="Grafico de Reservas"
+					width="400px" height="250px" type="pie" />
+			</south>
+		</borderlayout>
+	</window>
+
+</zk>

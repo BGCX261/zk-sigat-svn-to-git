@@ -1,0 +1,67 @@
+<?page title="Nuevo Departamento" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="winDepto" title="Nuevo Departamento" border="normal" mode="popup" 
+		apply="zk_controllers.NuevoDeptoController"	>
+
+		<grid>
+			<columns>
+				<column width="250px" />
+				<column />
+			</columns>
+			<rows>
+				<row spans="2">
+					<div align="center">
+						<label style="font-weight:bold;"
+							value="Información Nuevo Departamento" />
+					</div>
+				</row>
+				<row>
+					Nombre:
+					<textbox id="nombre" value=""/>
+				</row>
+				<row>
+					Color:
+				<combobox id="color" >
+					<attribute name="onSelect">
+						switch(self.getSelectedIndex()) {
+						case 0: self.style = "color:#D96666;font-weight: bold;"; break;
+						case 1: self.style = "color:#668CD9;font-weight: bold;"; break;
+						case 2: self.style = "color:#4CB052;font-weight: bold;"; break;
+						case 3: self.style = "color:#BFBF4D;font-weight: bold;"; break;
+						case 4: self.style = "color:#B373B3;font-weight: bold;"; break;
+						}
+					</attribute>
+					<comboitem sclass="red" label="Rojo" value="#A32929,#D96666"/>
+					<comboitem sclass="blue" label="Azul" value="#3467CE,#668CD9"/>
+					<comboitem sclass="green" label="Verde" value="#0D7813,#4CB052"/>
+					<comboitem sclass="khaki" label="Khaki" value="#88880E,#BFBF4D"/>
+					<comboitem sclass="purple" label="Violeta" value="#7A367A,#B373B3"/>  
+				</combobox>
+
+				</row>
+
+				<row>
+					Tarifa:
+					<textbox id="tarifa" value="" />
+				</row>
+				<row>
+					Plazas:
+					<textbox id="plaza" value="" />
+				</row>
+				<row>
+					Comodidades:
+					<textbox id="comodidades" cols="50" value="" />
+				</row>
+
+			</rows>
+
+		</grid>
+		<groupbox>
+			<div align="right">
+				<button id="btnGuardar" label="Guardar" width="80px"  />
+				<button id="btnSalir" label="Salir" width="80px" />
+			</div>
+		</groupbox>
+
+	</window>
+</zk>

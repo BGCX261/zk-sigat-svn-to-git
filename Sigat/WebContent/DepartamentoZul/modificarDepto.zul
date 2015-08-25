@@ -1,0 +1,59 @@
+<?page title="Update Departamento" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="winModDepto" title=" Update Departamento" border="normal" mode="popup" 
+			apply="zk_controllers.ModificarDeptoController">
+
+		<grid>
+			<columns>
+				<column width="250px" />
+				<column />
+			</columns>
+			<rows>
+				<row spans="2">
+					<div align="center">
+						<label style="font-weight:bold;"
+							value="Información Nuevo Departamento" />
+					</div>
+				</row>
+				<row>
+					Nombre:
+					<textbox id="nombre" value="@{depto.nombre}"/>
+				</row>
+				<row>
+					Color:
+				<combobox id="color" value="@{depto.nombre}">
+					
+					<comboitem sclass="red" label="Rojo" value="#A32929,#D96666"/>
+					<comboitem sclass="blue" label="Azul" value="#3467CE,#668CD9"/>
+					<comboitem sclass="green" label="Verde" value="#0D7813,#4CB052"/>
+					<comboitem sclass="khaki" label="Khaki" value="#88880E,#BFBF4D"/>
+					<comboitem sclass="purple" label="Violeta" value="#7A367A,#B373B3"/>  
+				</combobox>
+
+				</row>
+
+				<row>
+					Tarifa:
+					<textbox id="tarifa" value="@{depto.tarifa}" />
+				</row>
+				<row>
+					Plazas:
+					<textbox id="plaza" value="@{depto.plazas}" />
+				</row>
+				<row>
+					Comodidades:
+					<textbox id="comodidades" cols="50" value="@{depto.comodidades}" />
+				</row>
+
+			</rows>
+
+		</grid>
+		<groupbox>
+			<div align="right">
+				<button id="btnGuardar" label="Guardar" width="80px"  />
+				<button id="btnSalir" label="Salir" width="80px"  />
+			</div>
+		</groupbox>
+
+	</window>
+</zk>

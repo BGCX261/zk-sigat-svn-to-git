@@ -1,0 +1,101 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./bd"?>
+<zk>
+	<window id="createMyEntry" title="Crear Evento" border="normal"
+		mode="popup"
+		apply="zk_controllers.ReservaCreationController"
+		visible="false">
+		
+		<grid>
+			<rows>
+				
+				<row>
+				 	Razon Social:
+					<textbox id="nameText" cols="40" value="" />
+
+					<bandbox id="bd" apply= "zk_controllers.ClientesCRUDController" autodrop="true" >
+						<bandpopup>
+							<vbox>
+								<hbox>
+									Search
+									<textbox/>
+								</hbox>
+								<!-- createMyEntry$composer.getDatosCliente(); -->
+								<listbox id="cliLb" multiple="true"
+									rows="5" width="300px" 
+									model="@{bd$composer.allClientes}"
+										selectedItem="@{bd$composer.current}"
+										onSelect="bd.value=self.selectedItem.label; createMyEntry$composer.getDatosCliente(); bd.close();"
+										>
+									<listhead>
+										<listheader										
+											label="ID" width="20px" />
+										<listheader										
+											label="Razon Social" width="20px" />
+										<listheader label="C.U.I.T."
+											width="20px" />
+										<listheader label="Telefono"
+											width="20px" />
+									</listhead>
+									<listitem self="@{each='cliente'}"
+										value="@{cliente}" >
+										
+										<!-- el label se escribe con el nombre de la variable en el entity
+											y lo renderiza Automagicamente -->
+										<listcell	
+																											
+											label="@{cliente.idclientes}" />
+										<listcell  >	
+																										
+											<label id="cuit"  value="@{cliente.razonSocial}" />
+											
+											</listcell>	
+										<listcell	
+														
+											label="@{cliente.ciut}" />
+										<listcell
+											label="@{cliente.telefono}" />
+									</listitem>
+								</listbox>
+							</vbox>
+						</bandpopup>
+					</bandbox>
+				</row>
+				<row>
+					Nombre Contacto:
+					<textbox id="contactoText" cols="40" value=""  />
+				</row>
+				<row>
+					Direccion	:
+					<textbox id="direText" cols="40" value="" />
+				</row>
+				<row>
+					Telefono:
+					<textbox id="telefText" cols="40" value="" />
+				</row>
+				<row>
+					Departamento:
+					<combobox id="deptoType">
+						<comboitem label="Departamento 1" />
+						<comboitem label="Departamento 2" />
+						<comboitem label="Departamento 3" />
+					</combobox>
+				</row>
+				<row>
+					Tarifa:
+					<textbox id="tarifaText" cols="40" value="" />
+				</row>
+				<row>
+					Adelanto:
+					<textbox id="adelantoText" cols="40" value="" />
+				</row>
+				<row>
+					Submit:
+					<button id="btnAddReserva" label="Aceptar" width="36px"
+						height="24px" />
+					<button id="btnCancel" label="Cancelar" width="36px"
+						height="24px" />
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

@@ -1,0 +1,28 @@
+<?page title="Menu de Funciones" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="root" ?>
+<zk>
+	<window id="root" title="Menu" border="normal" height="100%" width="100%"
+		apply="zk_controller_Prueba.MenuController">
+
+		<grid>
+			<rows>
+				<row>
+					<button id="btn_calendar" width="130px"
+						height="24px" label="CALENDARIO"  />
+				</row>
+				<row>
+					<button id="btn_clientes" width="130px"
+						height="24px" label="CLIENTES"  />
+				</row>
+				<row>
+					<button id="btn_pasajeros" width="130px"
+						height="24px" label="PASAJEROS"  />
+				</row>
+				<row>
+					<button id="btn_conf" width="130px" height="24px"
+						label="DEPATAMENTOS" />
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

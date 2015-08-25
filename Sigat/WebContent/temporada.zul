@@ -1,0 +1,42 @@
+<?page title="Temporada" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Temporadas" border="normal" closable="true" maximizable="true" sizable="true">
+		<grid>
+			<auxhead>
+				<auxheader label="Temporada Alta" colspan="3" />
+				<auxheader label="Temporada Baja" colspan="6" />
+				<auxheader label="Temporada Alta" colspan="3" />
+			</auxhead>
+			<columns>
+				<column label="Enero" />
+				<column label="Febrero" />
+				<column label="Marzo" />
+				<column label="April" />
+				<column label="Mayo" />
+				<column label="Junio" />
+				<column label="Julio" />
+				<column label="Agosto" />
+				<column label="Septiembre" />
+				<column label="Octubre" />
+				<column label="Noviembre" />
+				<column label="Diciembre" />
+			</columns>
+			<rows>
+				<row>
+					<label value="1,000" />
+					<label value="1,100" />
+					<label value="1,200" />
+					<label value="1,300" />
+					<label value="1,400" />
+					<label value="1,500" />
+					<label value="1,600" />
+					<label value="1,700" />
+					<label value="1,800" />
+					<label value="1,900" />
+					<label value="2,000" />
+					<label value="2,100" />
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>
